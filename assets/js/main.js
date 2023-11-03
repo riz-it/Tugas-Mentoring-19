@@ -274,6 +274,9 @@ $(document).ready(function () {
 
   $("#tabel-produk").on("click", ".checklist", function () {
     $("#form-id-produk").val($(this).closest("tr").find("input").val());
+    
+    $("#tbody-list-bahan").empty();
+    bahan = [];
     $.ajax({
       url:
         "https://rizal.doxxa.my.id/api/v2/ingredients/" +
