@@ -131,6 +131,11 @@ function hapus(button) {
 
   nomorUrut--;
   row.parentNode.removeChild(row);
+  if (rowBelow.length == 0) {
+    $("#tbody-list-bahan").html(
+      '<tr id="empty-data"><td class="text-center" colspan="5">Data masih kosong</td></tr>'
+    );
+  }
 }
 
 function validateStock(input) {
@@ -215,6 +220,8 @@ $(document).ready(function () {
       });
       return;
     }
+
+    $("#empty-data").remove();
 
     if (validateCart($("#form-kode-bahan").val())) {
       Swal.fire({
@@ -326,6 +333,9 @@ $(document).ready(function () {
             nomorUrut++;
           });
         } else {
+          $("#tbody-list-bahan").html(
+            '<tr id="empty-data"><td class="text-center" colspan="5">Data masih kosong</td></tr>'
+          );
           toastr["info"](res.message);
         }
       },
@@ -380,6 +390,15 @@ $(document).ready(function () {
       return;
     }
 
+    if(bahan.length == 0){
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Tambahkan bahan terlebih dahulu!",
+      });
+      return;
+    }
+
     if ($("#tabel-list-bahan tr").length == 1) {
       Swal.fire({
         icon: "error",
@@ -426,6 +445,9 @@ $(document).ready(function () {
             $("#form-nama-produk").val("");
             $("#form-qty-produk").val("");
             $("#tbody-list-bahan").empty();
+            $("#tbody-list-bahan").html(
+              '<tr id="empty-data"><td class="text-center" colspan="5">Data masih kosong</td></tr>'
+            );
             console.log($("#tbody-list-bahan").html());
             nomorUrut = 1;
             bahan = [];
