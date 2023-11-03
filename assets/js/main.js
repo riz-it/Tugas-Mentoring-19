@@ -287,7 +287,7 @@ $(document).ready(function () {
       },
       success: function ({ data }) {
         $.LoadingOverlay("hide");
-        if (data.length == 0) {
+        if (count(data) == 0) {
           data.forEach((item) => {
             var tbody = $("#tbody-list-bahan");
             var newRow = tbody[0].insertRow(-1);
