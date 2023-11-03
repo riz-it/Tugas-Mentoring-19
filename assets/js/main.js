@@ -183,7 +183,6 @@ $(document).ready(function () {
     ],
   });
 
-  // dataTableProduk.clear().rows.add(listProduk).draw();
 
   dataTableBahan = $("#tabel-bahan").DataTable({
     columnDefs: [
@@ -193,37 +192,6 @@ $(document).ready(function () {
       },
     ],
   });
-
-  let dataProduk = [];
-  // listProduk.forEach((item) => {
-  //   dataProduk.push([
-  //     item[0],
-  //     item[1],
-  //   `<div class="text-center"><button
-  //   type="button"
-  //   class="btn mx-auto checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
-  // >
-  //   <i class="fas fa-check"></i>
-  // </button></div>`,
-  //   ]);
-  // });
-  // dataTableProduk.clear().rows.add(dataProduk).draw();
-
-  // let dataBahan = [];
-  // listBahan.forEach((item) => {
-  //   dataBahan.push([
-  //     item[0],
-  //     item[1],
-  //     item[2],
-  //   `<div class="text-center"><button
-  //   type="button"
-  //   class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
-  // >
-  //   <i class="fas fa-check"></i>
-  // </button></div>`,
-  //   ]);
-  // });
-  // dataTableBahan.clear().rows.add(dataBahan).draw();
 
   $(".validateQty").on("input", function () {
     var v = $(this).val(),
