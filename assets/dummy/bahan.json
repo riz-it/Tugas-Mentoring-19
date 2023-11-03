@@ -1,0 +1,296 @@
+{
+    "nama": "Daftar Bahan",
+    "data": [
+    {
+      "kode": "P001",
+      "nama": "Tepung",
+      "qty": 50
+    },
+    {
+      "kode": "P003",
+      "nama": "Keju",
+      "qty": 50
+    },
+    {
+      "kode": "P004",
+      "nama": "Tomat",
+      "qty": 50
+    },
+    {
+      "kode": "B004",
+      "nama": "Roti",
+      "qty": 100
+    },
+    {
+      "kode": "B005",
+      "nama": "Selada",
+      "qty": 100
+    },
+    {
+      "kode": "S003",
+      "nama": "Nasi",
+      "qty": 30
+    },
+    {
+      "kode": "S004",
+      "nama": "Ikan",
+      "qty": 30
+    },
+    {
+      "kode": "S005",
+      "nama": "Rumput Laut",
+      "qty": 30
+    },
+    {
+      "kode": "N004",
+      "nama": "Mie",
+      "qty": 75
+    },
+    {
+      "kode": "N005",
+      "nama": "Sayuran",
+      "qty": 75
+    },
+    {
+      "kode": "N006",
+      "nama": "Saus",
+      "qty": 75
+    },
+    {
+      "kode": "SP005",
+      "nama": "Spaghetti",
+      "qty": 60
+    },
+    {
+      "kode": "SP006",
+      "nama": "Saus Tomat",
+      "qty": 60
+    },
+    {
+      "kode": "SP007",
+      "nama": "Keju",
+      "qty": 60
+    },
+    {
+      "kode": "T006",
+      "nama": "Tortilla",
+      "qty": 40
+    },
+    {
+      "kode": "T007",
+      "nama": "Daging",
+      "qty": 40
+    },
+    {
+      "kode": "T008",
+      "nama": "Selada",
+      "qty": 40
+    },
+    {
+      "kode": "IC007",
+      "nama": "Es Krim",
+      "qty": 80
+    },
+    {
+      "kode": "IC008",
+      "nama": "Cokelat",
+      "qty": 80
+    },
+    {
+      "kode": "IC009",
+      "nama": "Stroberi",
+      "qty": 80
+    },
+    {
+      "kode": "D008",
+      "nama": "Adonan Donat",
+      "qty": 120
+    },
+    {
+      "kode": "D009",
+      "nama": "Gula",
+      "qty": 120
+    },
+    {
+      "kode": "D010",
+      "nama": "Glazur",
+      "qty": 120
+    },
+    {
+      "kode": "SC009",
+      "nama": "Sayuran Hijau",
+      "qty": 90
+    },
+    {
+      "kode": "SC008",
+      "nama": "Tomat",
+      "qty": 90
+    },
+    {
+      "kode": "SC010",
+      "nama": "Dressing",
+      "qty": 90
+    },
+    {
+      "kode": "FC011",
+      "nama": "Ayam",
+      "qty": 70
+    },
+    {
+      "kode": "FC012",
+      "nama": "Tepung",
+      "qty": 70
+    },
+    {
+      "kode": "FC013",
+      "nama": "Bumbu",
+      "qty": 70
+    },
+    {
+      "kode": "P011",
+      "nama": "Tepung",
+      "qty": 45
+    },
+    {
+      "kode": "P010",
+      "nama": "Telur",
+      "qty": 45
+    },
+    {
+      "kode": "P013",
+      "nama": "Sirup",
+      "qty": 45
+    },
+    {
+      "kode": "FF012",
+      "nama": "Kentang",
+      "qty": 65
+    },
+    {
+      "kode": "FF015",
+      "nama": "Minyak",
+      "qty": 65
+    },
+    {
+      "kode": "FF017",
+      "nama": "Garam",
+      "qty": 65
+    },
+    {
+      "kode": "ST013",
+      "nama": "Daging Sapi",
+      "qty": 55
+    },
+    {
+      "kode": "ST014",
+      "nama": "Garam",
+      "qty": 55
+    },
+    {
+      "kode": "ST016",
+      "nama": "Lada",
+      "qty": 55
+    },
+    {
+      "kode": "HD014",
+      "nama": "Sosis",
+      "qty": 85
+    },
+    {
+      "kode": "HD015",
+      "nama": "Roti",
+      "qty": 85
+    },
+    {
+      "kode": "HD016",
+      "nama": "Saus",
+      "qty": 85
+    },
+    {
+      "kode": "S015",
+      "nama": "Kentang",
+      "qty": 25
+    },
+    {
+      "kode": "S016",
+      "nama": "Kacang Hijau",
+      "qty": 25
+    },
+    {
+      "kode": "S018",
+      "nama": "Kari",
+      "qty": 25
+    },
+    {
+      "kode": "P016",
+      "nama": "Pasta",
+      "qty": 95
+    },
+    {
+      "kode": "P017",
+      "nama": "Saus",
+      "qty": 95
+    },
+    {
+      "kode": "P089",
+      "nama": "Lo siento",
+      "qty": 30
+    },
+    {
+      "kode": "FC017",
+      "nama": "Ikan",
+      "qty": 35
+    },
+    {
+      "kode": "FC018",
+      "nama": "Kentang",
+      "qty": 35
+    },
+    {
+      "kode": "FC019",
+      "nama": "Tartar Sauce",
+      "qty": 35
+    },
+    {
+      "kode": "S018",
+      "nama": "Daging Kebab",
+      "qty": 50
+    },
+    {
+      "kode": "S019",
+      "nama": "Roti",
+      "qty": 50
+    },
+    {
+      "kode": "S020",
+      "nama": "Saus",
+      "qty": 50
+    },
+    {
+      "kode": "C020",
+      "nama": "Bumbu Curry",
+      "qty": 70
+    },
+    {
+      "kode": "C021",
+      "nama": "Nasi",
+      "qty": 70
+    },
+    {
+      "kode": "SR020",
+      "nama": "Nori",
+      "qty": 40
+    },
+    {
+      "kode": "SR021",
+      "nama": "Nasi",
+      "qty": 40
+    },
+    {
+      "kode": "SR022",
+      "nama": "Ikan",
+      "qty": 40
+    }
+  ]
+}
+  
