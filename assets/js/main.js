@@ -183,7 +183,6 @@ $(document).ready(function () {
     ],
   });
 
-
   dataTableBahan = $("#tabel-bahan").DataTable({
     columnDefs: [
       {
@@ -288,42 +287,52 @@ $(document).ready(function () {
       },
       success: function ({ data }) {
         $.LoadingOverlay("hide");
-        data.forEach((item) => {
-          var tbody = $("#tbody-list-bahan");
-          var newRow = tbody[0].insertRow(-1);
+        if (data.length == 0) {
+          data.forEach((item) => {
+            var tbody = $("#tbody-list-bahan");
+            var newRow = tbody[0].insertRow(-1);
 
-          var cell1 = newRow.insertCell(0);
-          var cell2 = newRow.insertCell(1);
-          var cell3 = newRow.insertCell(2);
-          var cell4 = newRow.insertCell(3);
-          var cell5 = newRow.insertCell(4);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
 
-          cell1.innerHTML = nomorUrut;
-          cell2.innerHTML = item.kode;
-          cell3.innerHTML = item.nama;
-          cell4.innerHTML =
-            '<input class="form-control" data-kode="' +
-            item.kode +
-            '" oninput="validateStock(this)" readonly type="text" data-stock="' +
-            item.qty +
-            '" value="'+item.qty+'" id="qty-' +
-            nomorUrut +
-            '">';
-          cell5.innerHTML =
-            "<button class='btn btn-danger btn-sm' onclick='hapus(this)'>Hapus</button>";
+            cell1.innerHTML = nomorUrut;
+            cell2.innerHTML = item.kode;
+            cell3.innerHTML = item.nama;
+            cell4.innerHTML =
+              '<input class="form-control" data-kode="' +
+              item.kode +
+              '" oninput="validateStock(this)" readonly type="text" data-stock="' +
+              item.qty +
+              '" value="' +
+              item.qty +
+              '" id="qty-' +
+              nomorUrut +
+              '">';
+            cell5.innerHTML =
+              "<button class='btn btn-danger btn-sm' onclick='hapus(this)'>Hapus</button>";
 
-          bahan.push([item.kode, item.nama, $("#qty-" + nomorUrut).val()]);
+            bahan.push([item.kode, item.nama, $("#qty-" + nomorUrut).val()]);
 
-          $("#form-kode-bahan").val("");
-          $("#form-nama-bahan").val("");
-          $("#form-stock-bahan").val("");
+            $("#form-kode-bahan").val("");
+            $("#form-nama-bahan").val("");
+            $("#form-stock-bahan").val("");
 
-          nomorUrut++;
-        });
+            nomorUrut++;
+          });
+        } else {
+          toastr["info"](err.responseJSON.message);
+        }
       },
       error: function (err) {
         $.LoadingOverlay("hide");
-        toastr["info"](err.responseJSON.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err.responseJSON.message,
+        });
       },
     });
     let row = $(this).closest("tr");
