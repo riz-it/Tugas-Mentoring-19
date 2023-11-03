@@ -336,9 +336,9 @@ $(document).ready(function () {
           cell4.innerHTML =
             '<input class="form-control" data-kode="' +
             item.kode +
-            '" oninput="validateStock(this)" type="text" data-stock="' +
+            '" oninput="validateStock(this)" readonly type="text" data-stock="' +
             item.qty +
-            '" value="1" id="qty-' +
+            '" value="'+item.qty+'" id="qty-' +
             nomorUrut +
             '">';
           cell5.innerHTML =
