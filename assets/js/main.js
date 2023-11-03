@@ -285,10 +285,10 @@ $(document).ready(function () {
           custom: customElement,
         });
       },
-      success: function ({ data }) {
+      success: function (res) {
         $.LoadingOverlay("hide");
-        if (count(data) == 0) {
-          data.forEach((item) => {
+        if (res.status == true) {
+          res.data.forEach((item) => {
             var tbody = $("#tbody-list-bahan");
             var newRow = tbody[0].insertRow(-1);
 
@@ -323,7 +323,7 @@ $(document).ready(function () {
             nomorUrut++;
           });
         } else {
-          toastr["info"](err.responseJSON.message);
+          toastr["info"](res.message);
         }
       },
       error: function (err) {
