@@ -263,9 +263,24 @@ $(document).ready(function () {
       success: function (res) {
         $.LoadingOverlay("hide");
         if (res.status == true) {
-        
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil",
+            text: res.message,
+          }).then(() => {
+            $("#kode").val("");
+            $("#nama").val("");
+            $("#harga").val("");
+            $("#kategori").val("");
+            $("#deskripsi").val("");
+            fetchProduk();
+          });
         } else {
-         
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: res.message,
+          });
         }
       },
       error: function (err) {
