@@ -124,8 +124,9 @@ function deleteProduct(param) {
   }).then((result) => {
     if (result.value) {
       $.ajax({
-        url: "https://rizal.doxxa.my.id/api/v2/products/" + param,
+        url: "http://rizal.doxxa.my.id/api/v2/products/" + param,
         method: "DELETE",
+        dataType: "JSON",
         beforeSend: function () {
           $.LoadingOverlay("show", {
             image: "",
