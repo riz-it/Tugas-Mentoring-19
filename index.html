@@ -413,6 +413,15 @@
           </div>
           <!--end modal-header-->
           <div class="modal-body">
+            <div class="">
+              <button
+              type="button" onclick="showModal('modalTambahProduk');closeModal('modalProduk');"
+              class="btn btn-outline-primary"
+            >
+              <i class="mdi mdi-plus me-2"></i>Tambah Produk
+            </button>
+            </div>
+            <hr>
             <table
               id="tabel-produk"
               class="table table-bordered dt-responsive nowrap"
@@ -473,6 +482,98 @@
 
               <tbody></tbody>
             </table>
+          </div>
+          <!--end modal-body-->
+        </div>
+        <!--end modal-content-->
+      </div>
+      <!--end modal-dialog-->
+    </div>
+
+    <div
+      class="modal fade bd-example-modal-lg"
+      id="modalTambahProduk"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title m-0" id="myLargeModalLabel">Tambah Produk</h6>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--end modal-header-->
+          <form id="form-produk" action="">
+
+          <div class="modal-body">
+            <div class="row">
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode produk">
+                  <label for="kode">Kode Produk</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="nama" placeholder="Nama produk">
+                  <label for="nama">Nama Produk</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control" id="harga" name="harga" placeholder="Harga produk">
+                  <label for="harga">Harga Produk</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="kategori" name="kategori" aria-label="Floating label select example">
+                    <option disabled selected="">Pilih</option>
+                    <option value="1">Makanan</option>
+                    <option value="2">Amunisi</option>
+                    <option value="3">Mancing Equipment</option>
+                  </select>
+                  <label for="kategori">Kategori</label>
+              </div>
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Deskripsi" name="deskripsi" id="deskripsi" style="height: 100px"></textarea>
+                  <label for="deskripsi">Deskripsi</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-soft-secondary btn-sm"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-soft-primary btn-sm"
+              id="tambah-produk"
+            >
+              Tambah
+            </button>
           </div>
           <!--end modal-body-->
         </div>

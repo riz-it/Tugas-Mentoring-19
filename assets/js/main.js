@@ -242,6 +242,43 @@ $(document).ready(function () {
     ],
   });
 
+  $("#tambah-produk").on("click", function () {
+    $.ajax({
+      url:
+        "https://rizal.doxxa.my.id/api/v2/products/",
+      method: "POST",
+      data: {
+        product_code: $("#kode").val(),
+        product_name: $("#nama").val(),
+        price: $("#harga").val(),
+        category_id: $("#kategori").val(),
+        description: $("#deskripsi").val(),
+      },
+      beforeSend: function () {
+        $.LoadingOverlay("show", {
+          image: "",
+          custom: customElement,
+        });
+      },
+      success: function (res) {
+        $.LoadingOverlay("hide");
+        if (res.status == true) {
+        
+        } else {
+         
+        }
+      },
+      error: function (err) {
+        $.LoadingOverlay("hide");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err.responseJSON.message,
+        });
+      },
+    });
+  });
+
   $(".validateQty").on("input", function () {
     var v = $(this).val(),
       vc = v.replace(/[^0-9]/, "");
