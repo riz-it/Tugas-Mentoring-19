@@ -273,6 +273,7 @@ $(document).ready(function () {
             $("#harga").val("");
             $("#kategori").val("");
             $("#deskripsi").val("");
+            closeModal("modalTambahProduk");
             fetchProduk();
           });
         } else {
