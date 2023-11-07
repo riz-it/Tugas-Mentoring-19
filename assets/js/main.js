@@ -45,12 +45,14 @@ function fetchProduk() {
             '" />' +
             item.product_code,
           item.product_name,
-          `<div class="text-center"><button
-          type="button"
-          class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
-        >
-          <i class="fas fa-check"></i>
-        </button></div>`,
+          `<div class="text-center">
+          <div class="btn-group" aria-label="Basic example" role="group">
+              <button type="button" class="btn checklist btn-outline-primary"><i class="mdi mdi-check"></i></button>
+              <button type="button" onclick="deleteProduct('` +
+            item.product_id +
+            `')" class="btn btn-outline-danger"><i class="mdi  mdi-trash-can-outline"></i></button>
+          </div>
+          </div>`,
         ]);
       });
 
@@ -110,6 +112,48 @@ function fetchBahan() {
         text: err.message,
       });
     },
+  });
+}
+
+function deleteProduct(param) {
+  Swal.fire({
+    title: "Apakah anda yakin?",
+    text: "Anda akan menghapus produk ini!",
+    icon: "warning",
+    showCancelButton: true,
+  }).then((result) => {
+    if (result.value) {
+      $.ajax({
+        url: "https://rizal.doxxa.my.id/api/v2/products/" + param,
+        method: "DELETE",
+        beforeSend: function () {
+          $.LoadingOverlay("show", {
+            image: "",
+            custom: customElement,
+          });
+        },
+        success: function (res) {
+          $.LoadingOverlay("hide");
+          if (res.status == true) {
+            Swal.fire({
+              icon: "success",
+              title: "Berhasil",
+              text: res.message,
+            }).then(() => {
+              fetchProduk();
+            });
+          }
+        },
+        error: function (err) {
+          $.LoadingOverlay("hide");
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: err.responseJSON.message,
+          });
+        },
+      });
+    }
   });
 }
 
@@ -281,7 +325,7 @@ $(document).ready(function () {
 
   $("#tabel-produk").on("click", ".checklist", function () {
     $("#form-id-produk").val($(this).closest("tr").find("input").val());
-    
+
     $("#tbody-list-bahan").empty();
     bahan = [];
     $.ajax({
@@ -390,7 +434,7 @@ $(document).ready(function () {
       return;
     }
 
-    if(bahan.length == 0){
+    if (bahan.length == 0) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
